@@ -2,12 +2,72 @@
 <html lang="en">
 <head>
     <title>JavaScript Calculator</title>
+    <!-- This is an HTML comment (which is not recognized within JavaScript) -->
     <script type="text/javascript">
-        //script goes here
+
+        // This is a JavaScript comment
+
+        //get Number1 from the html form
+        function getNumber1() {
+//            alert("get number1 function");
+            var number1 = document.getElementById("number1").value;
+            //convert number1 from text to integer via parseInt
+            return parseInt(number1);
+        };
+
+        //get Number2 from the html form
+        function getNumber2() {
+            var number2 = document.getElementById("number2").value;
+            //convert number2 from text to integer via parseInt
+            return parseInt(number2);
+        };
+
+        //add the numbers together
+        function add() {
+            var number1 = getNumber1();
+            var number2 = getNumber2();
+            var result = number1 + number2;
+            displayResult(result);
+        }
+
+        //substract the numbers together
+        function subtract() {
+            var number1 = getNumber1();
+            var number2 = getNumber2();
+            var result = number1 - number2;
+            displayResult(result);
+        }
+
+        //display the result to the html form
+        function displayResult(result) {
+            document.getElementById("result").value = result;
+        }
+
     </script>
 </head>
 <body>
     <h1>JavaScript Calculator</h1>
     <br />
+    <label>Number 1:</label>
+    <input type="text" id="number1" />
+    <br />
+    <br />
+
+    <label>Number 2:</label>
+    <input type="text" id="number2" />
+    <br />
+    <br />
+
+    <label>Operator:</label>
+    <input type="button" value="+" onclick="add();"/>
+    <input type="button" value="-" onclick="subtract();"/>
+    <input type="button" value="x" />
+    <input type="button" value="/" />
+    <br />
+    <br />
+
+    <label>Result: </label>
+    <input type="text" id="result" />
+
 </body>
 </html>
